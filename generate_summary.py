@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import data_clean
 
-def query(input, model_inputs, model, tokenizer):
+def query(model_inputs, model, tokenizer):
     generated_ids = model.generate(**model_inputs, do_sample=True, max_length = 8000)
     summaries = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)
     result = []

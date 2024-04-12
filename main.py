@@ -61,7 +61,7 @@ def main():
     for SOMETHING THROUGH TOKENIZED INPUT:
         json_obj = {
             "Document": {
-                "Summary": generate_summary.query(summary_text[i], model_inputs, model, tokenizer),
+                "Summary": generate_summary.query(model_inputs(FIX THIS), model, tokenizer),
                 "Conclusion": conclusion_text[i]
             }
         }
