@@ -18,8 +18,8 @@ def main():
     tokenizer.pad_token = tokenizer.eos_token  # Most LLMs don't have a pad token by default
     model.to("cuda")
 
-    conclusion_directory = "/users/PAS2570/jindal73/Downloads/NLP_Dataset-main/sumpubmed-master/text"
-    summary_directory = "/users/PAS2570/jindal73/Downloads/NLP_Dataset-main/sumpubmed-master/abstract"
+    conclusion_directory = "DEFINE HERE"
+    summary_directory = "DEFINE HERE"
 
     files = os.listdir(conclusion_directory)
 
@@ -58,10 +58,12 @@ def main():
     pickle.dump(model_inputs, pklfile)                    
     pklfile.close()
     '''
-    for SOMETHING THROUGH TOKENIZED INPUT:
+
+    ###FIX THIS ####
+    for i in range(len(model_inputs)):
         json_obj = {
             "Document": {
-                "Summary": generate_summary.query(model_inputs(FIX THIS), model, tokenizer),
+                "Summary": generate_summary.query(model_inputs[i], model, tokenizer),
                 "Conclusion": conclusion_text[i]
             }
         }
